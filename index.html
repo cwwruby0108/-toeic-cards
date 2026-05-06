@@ -305,14 +305,13 @@
                             </div>
                         </div>
 
-                        {/* Unit 分類標籤 */}
-                        <div className="max-w-6xl mx-auto mt-6 flex gap-2 overflow-x-auto hide-scrollbar pb-2">
+                        {/* Unit 分類標籤 (💡 改為自動換行 flex-wrap，移除限制滑動的設定) */}
+                        <div className="max-w-6xl mx-auto mt-6 flex flex-wrap gap-2 pb-2">
                             {units.map(unit => (
                                 <button 
                                     key={unit}
                                     onClick={() => setCurrentUnit(unit)}
-                                    // 💡 新增了 shrink-0 屬性，防止最右邊的按鈕被擠壓或切斷
-                                    className={`shrink-0 whitespace-nowrap px-5 py-2 rounded-full text-sm font-medium transition-all ${
+                                    className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
                                         currentUnit === unit 
                                         ? 'bg-white text-[#d97706] shadow-md' 
                                         : 'bg-black/5 text-gray-800 hover:bg-black/10'
